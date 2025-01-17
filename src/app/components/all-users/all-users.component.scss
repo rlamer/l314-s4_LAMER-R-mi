@@ -1,0 +1,122 @@
+// Couleurs
+$primary-color: #ff6392;
+$secondary-color: #a349a4; 
+$background-dark: #1c1b2f;
+$table-border-color: rgba(255, 255, 255, 0.3);
+$highlight-color: rgba(255, 99, 146, 0.2);
+
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=VT323&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+p {
+    padding: 0.5%;
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+h2 {
+    padding: 0.5%;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(65, 31, 58);
+}
+
+// Tableau
+.vaporwave-table {
+  width: 80%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: "VT323", monospace;
+  color: white;
+  background: $background-dark;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+  thead {
+    background: $secondary-color;
+    color: white;
+
+    th {
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-shadow: 1px 1px $primary-color;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background: $highlight-color;
+      }
+
+      &:hover {
+        background: $primary-color;
+        color: black;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      td {
+        padding: 1rem;
+        border: 1px solid $table-border-color;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Animation pour faire apparaître le tableau
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vaporwave-table {
+  animation: slide-in 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+    .vaporwave-table {
+      width: 100%;
+      font-size: 0.9rem;
+  
+      thead {
+        th {
+          font-size: 1rem;
+        }
+      }
+  
+      tbody {
+        td {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .vaporwave-table {
+      font-size: 0.8rem;
+  
+      thead {
+        th {
+          font-size: 0.9rem;
+        }
+      }
+  
+      tbody {
+        td {
+          padding: 0.3rem;
+        }
+      }
+    }
+  }
+  

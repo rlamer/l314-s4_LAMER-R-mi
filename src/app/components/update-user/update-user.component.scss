@@ -1,0 +1,149 @@
+// Couleurs
+$primary-color: #ff6392; 
+$secondary-color: #a349a4; 
+$background-gradient: linear-gradient(135deg, #1c1b2f, #5e34d1);
+$input-bg: rgba(255, 255, 255, 0.1);
+$input-border: rgba(255, 255, 255, 0.3);
+$button-hover-color: #faff70; 
+
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=VT323&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+p {
+    padding: 0.5%;
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+h2 {
+    padding: 0.5%;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(65, 31, 58);
+}
+
+// Conteneur principal
+.update-user-container {
+  background: $background-gradient;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+  color: white;
+  font-family: "VT323", monospace;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px $primary-color;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px $secondary-color;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      color: white;
+      background: $input-bg;
+      border: 1px solid $input-border;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .vaporwave-btn {
+    background: $secondary-color;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: "VT323", monospace;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background: $button-hover-color;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// Animation
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.update-user-container {
+  animation: fade-in 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+    .update-user-container {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .vaporwave-btn {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .update-user-container {
+      padding: 1rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    .form-group label {
+      font-size: 1rem;
+    }
+  
+    .vaporwave-btn {
+      font-size: 0.9rem;
+    }
+  }
+  

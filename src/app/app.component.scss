@@ -1,0 +1,132 @@
+// Idée choisie sur laquelle je vais partir (menu et app au design vaporwave avec un soleil couchant) 
+
+// Couleurs
+$primary-color: #a349a4; 
+$secondary-color: #ff6392; 
+$accent-color: #faff70; 
+$background-gradient: linear-gradient(135deg, #ff92a8, #862dbd);
+
+.hero {
+  position: sticky;
+  height: 50vh;
+  background: url('sun.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    color: $accent-color;
+    font-size: 2.5rem;
+    z-index: 1;
+    text-shadow: 2px 2px $primary-color;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+}
+
+// Polices et textes
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1, a {
+  font-family: 'Press Start 2P', monospace;
+}
+
+// Animations 
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 20px $secondary-color;
+  }
+  50% {
+    text-shadow: 0 0 10px $primary-color, 0 0 20px $secondary-color, 0 0 30px $accent-color;
+  }
+}
+
+h1 {
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+// Menu et barre nav
+/*
+h2 {
+  text-align: center;
+}
+
+nav {
+  ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  
+  li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+*/
+
+nav {
+  background: $primary-color;
+  padding: 10px 0;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0 15px;
+  }
+
+  a {
+    color: $accent-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+
+

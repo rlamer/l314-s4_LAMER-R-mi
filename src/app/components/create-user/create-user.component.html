@@ -1,0 +1,88 @@
+<p>create-user works!</p>
+
+<!-- Test ajout de la fonction 1 -->
+
+<!--  
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+    <div>
+      <label for="name">Nom :</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        [(ngModel)]="user.name" 
+        required 
+        placeholder="Entrez le nom"
+      />
+    </div>
+  
+    <div>
+      <label for="email">Email :</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        [(ngModel)]="user.email" 
+        required 
+        placeholder="Entrez l'email"
+      />
+    </div>
+  
+    <button 
+      type="submit" 
+      [disabled]="!userForm.form.valid">
+      Ajouter l'utilisateur
+    </button>
+  
+  </form>
+  
+  <p *ngIf="successMessage" style="color: green;">
+    {{ successMessage }}
+  </p>
+-->
+<!-- Test ajout de la fonction 2-->
+<!--
+<form>
+
+    <div>
+      <label>Nom :</label>
+    </div>
+  
+    <div>
+      <label>Email :</label>
+    </div>
+  
+    <button>
+      Ajouter l'utilisateur
+    </button>
+  
+  </form>
+  
+  <p>
+  </p>
+-->
+
+<form class="vaporwave-form">
+  <!-- Champ pour le nom -->
+  <div class="form-group">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" [(ngModel)]="user.name" placeholder="Entrez le nom" />
+  </div>
+
+  <!-- Champ pour l'email -->
+  <div class="form-group">
+    <label for="email">Email :</label>
+    <input type="email" id="email" [(ngModel)]="user.email" placeholder="Entrez l'email" />
+  </div>
+
+  <!-- Bouton pour ajouter l'utilisateur -->
+  <button class="vaporwave-btn" type="button" (click)="onAddUser()">
+    Ajouter l'utilisateur
+  </button>
+</form>
+
+<!-- Zone pour afficher un éventuel message de confirmation -->
+<p *ngIf="confirmationMessage" class="confirmation-message">
+  {{ confirmationMessage }}
+</p>
